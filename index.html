@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diseño y desarrollo de sitios web profesionales, modernos y funcionales.">
+    <meta name="keywords" content="diseño web, desarrollo web, tecnologías, futuro digital, contacto">
     <title>Mi Sitio Web - Diseño y Desarrollo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
@@ -14,22 +16,33 @@
     <nav id="navbar">
         <div class="container">
             <div class="logo">
-                <img src="assets/JAD-logo.png" alt="Logo">
+                <img src="assets/JAD-logo.png" alt="Logo de Mi Sitio Web">
             </div>
-            <ul class="nav-links">
-                <li><a href="#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-                <li><a href="#portafolio"><i class="fas fa-briefcase"></i>Portafolio</a></li>
-                <li><a href="#servicios"><i class="fas fa-cogs"></i>Servicios</a></li>
-                <li><a href="#contacto"><i class="fas fa-envelope"></i>Contacto</a></li>
-            </ul>
+            <!-- Botón de menú hamburguesa -->
+            <button id="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Contenedor de los enlaces -->
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#inicio"><i class="fas fa-home"></i>Inicio</a></li>
+                    <li><a href="#tecnologias"><i class="fas fa-microchip"></i>Tecnologías</a></li>
+                    <li><a href="#futuro"><i class="fas fa-rocket"></i>Futuro Digital</a></li>
+                    <li><a href="#servicios"><i class="fas fa-cogs"></i>Servicios</a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope"></i>Contacto</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
+    <!-- Overlay para móviles -->
+    <div id="overlay" class="overlay"></div>
 
     <!-- Contenido principal -->
     <main>
         <!-- Sección Inicio -->
         <section id="inicio" class="hero">
-            <div class="particles" id="particles-js"></div> <!-- Efecto de partículas (opcional) -->
+            <div class="particles" id="particles-js"></div>
             <div class="container">
                 <h1>Diseño y Desarrollo de Sitios Web Profesionales</h1>
                 <p>Transformamos tus ideas en realidad con diseños modernos, funcionales y centrados en el usuario.</p>
@@ -37,105 +50,158 @@
             </div>
         </section>
 
-        <!-- Sección Portafolio -->
-        <section id="portafolio" class="portfolio">
+        <!-- Sección Tecnologías -->
+        <section id="tecnologias" class="technologies">
             <div class="container">
-                <h2>Portafolio</h2>
-                <div class="projects">
-                    <div class="project">
-                        <img src="assets/foto-1.jpg" alt="Proyecto 1" loading="lazy">
-                        <div class="project-content">
-                            <h3>Sitio Web para Restaurante</h3>
-                            <p>Diseño moderno y responsive para un restaurante local.</p>
-                            <a href="#" class="project-link">Ver Proyecto</a>
-                        </div>
+                <h2>Tecnologías que Usamos</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-code"></i></div>
+                        <h3>Desarrollo Web</h3>
+                        <p>Utilizamos las últimas tecnologías como HTML5, CSS3, JavaScript y frameworks modernos.</p>
                     </div>
-                    <div class="project">
-                        <img src="assets/foto-2.jpg" alt="Proyecto 2" loading="lazy">
-                        <div class="project-content">
-                            <h3>Tienda Online de Moda</h3>
-                            <p>E-commerce completo con integración de pagos.</p>
-                            <a href="#" class="project-link">Ver Proyecto</a>
-                        </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Diseño Responsivo</h3>
+                        <p>Creamos diseños que se adaptan a cualquier dispositivo, desde móviles hasta escritorios.</p>
                     </div>
-                    <div class="project">
-                        <img src="assets/foto-3.jpg" alt="Proyecto 3" loading="lazy">
-                        <div class="project-content">
-                            <h3>Landing Page para Startup</h3>
-                            <p>Diseño minimalista y enfocado en conversiones.</p>
-                            <a href="#" class="project-link">Ver Proyecto</a>
-                        </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud Computing</h3>
+                        <p>Implementamos soluciones en la nube para escalabilidad y seguridad.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Inteligencia Artificial</h3>
+                        <p>Integramos IA para personalizar la experiencia del usuario.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-       <!-- Sección Servicios -->
-<section id="servicios" class="services">
-    <div class="container">
-        <h2>Servicios</h2>
-        <div class="service-list">
-            <div class="service">
-                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-                <h3>Diseño Web Personalizado</h3>
-                <p>Creación de sitios web únicos y adaptados a tus necesidades, con un enfoque en la experiencia del usuario y el diseño responsive.</p>
+        <!-- Sección Futuro Digital -->
+        <section id="futuro" class="future">
+            <div class="container">
+                <h2>El Futuro Digital</h2>
+                <div class="future-content">
+                    <div class="future-text">
+                        <h3>Innovación y Transformación</h3>
+                        <p>El futuro digital está aquí. Nos especializamos en crear soluciones que anticipan las tendencias tecnológicas, desde realidad aumentada hasta blockchain.</p>
+                        <a href="#contacto" class="btn">Explorar Más</a>
+                    </div>
+                    <div class="future-image">
+                        <img src="assets/foto-3.jpg" alt="Futuro Digital" loading="lazy">
+                    </div>
+                </div>
             </div>
-            <div class="service">
-                <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
-                <h3>E-commerce</h3>
-                <p>Desarrollo de tiendas online completas con carrito de compras, integración de pasarelas de pago y gestión de inventario.</p>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="services">
+            <div class="container">
+                <h2>Servicios</h2>
+                <div class="service-list">
+                    <div class="service">
+                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Diseño Web Personalizado</h3>
+                        <p>Creación de sitios web únicos y adaptados a tus necesidades.</p>
+                    </div>
+                    <div class="service">
+                        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <h3>E-commerce</h3>
+                        <p>Desarrollo de tiendas online completas con carrito de compras.</p>
+                    </div>
+                    <div class="service">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Mantenimiento y Soporte</h3>
+                        <p>Actualizaciones regulares y soporte técnico continuo.</p>
+                    </div>
+                </div>
             </div>
-            <div class="service">
-                <div class="service-icon"><i class="fas fa-tools"></i></div>
-                <h3>Mantenimiento y Soporte</h3>
-                <p>Actualizaciones regulares, backups automatizados y soporte técnico continuo para garantizar el rendimiento óptimo de tu sitio web.</p>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <input type="text" id="name" placeholder="Nombre" required autocomplete="name">
+                        <input type="email" id="email" placeholder="Email" required autocomplete="email">
+                        <textarea id="message" placeholder="Mensaje" required></textarea>
+                        <button type="submit">Enviar Mensaje</button>
+                    </form>
+                    <div id="error-message" class="error-message"></div>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <p>¿Tienes alguna pregunta o necesitas ayuda? No dudes en contactarnos.</p>
+                    <a href="https://wa.me/5491234567890" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Columna 1: Logo y descripción -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="assets/JAD-logo.png" alt="Logo de Mi Sitio Web">
+                    </div>
+                    <p class="footer-description">
+                        Transformamos tus ideas en realidad con diseños modernos y funcionales.
+                    </p>
+                </div>
+    
+                <!-- Columna 2: Enlaces rápidos -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#tecnologias">Tecnologías</a></li>
+                        <li><a href="#futuro">Futuro Digital</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Columna 3: Redes sociales -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Columna 4: Información de contacto -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> info@misitioweb.com</li>
+                        <li><i class="fas fa-phone"></i> +54 9 123 456 7890</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Línea de separación -->
+            <div class="footer-divider"></div>
+    
+            <!-- Derechos de autor -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
             </div>
         </div>
-    </div>
-</section>
-
-     <!-- Sección Contacto -->
-<section id="contacto" class="contact">
-    <div class="container">
-        <h2>Contacto</h2>
-        <div class="contact-form">
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Nombre" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <textarea id="message" placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </div>
-        <div class="contact-info">
-            <h3>Información de Contacto</h3>
-            <p>¿Tienes alguna pregunta o necesitas ayuda? No dudes en contactarnos.</p>
-            <p>Estamos disponibles para responder tus consultas y brindarte el mejor servicio.</p>
-            <a href="https://wa.me/5491234567890" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-            </a>
-        </div>
-    </div>
-</section>
-
-       <!-- Footer -->
-<footer>
-    <div class="container">
-        <h3>Mi Sitio Web</h3>
-        <p>Transformamos tus ideas en realidad con diseños modernos y funcionales.</p>
-        <div class="social-links">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
-
+    </footer>
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
