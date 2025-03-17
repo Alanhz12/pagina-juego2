@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web - Diseño y Desarrollo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar Superior -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/JAD-logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="#portafolio"><i class="fas fa-briefcase"></i>Portafolio</a></li>
+                <li><a href="#servicios"><i class="fas fa-cogs"></i>Servicios</a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i>Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección Inicio -->
+        <section id="inicio" class="hero">
+            <div class="particles" id="particles-js"></div> <!-- Efecto de partículas (opcional) -->
+            <div class="container">
+                <h1>Diseño y Desarrollo de Sitios Web Profesionales</h1>
+                <p>Transformamos tus ideas en realidad con diseños modernos, funcionales y centrados en el usuario.</p>
+                <a href="#contacto" class="btn">Solicitar Presupuesto</a>
+            </div>
+        </section>
+
+        <!-- Sección Portafolio -->
+        <section id="portafolio" class="portfolio">
+            <div class="container">
+                <h2>Portafolio</h2>
+                <div class="projects">
+                    <div class="project">
+                        <img src="assets/foto-1.jpg" alt="Proyecto 1" loading="lazy">
+                        <div class="project-content">
+                            <h3>Sitio Web para Restaurante</h3>
+                            <p>Diseño moderno y responsive para un restaurante local.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="assets/foto-2.jpg" alt="Proyecto 2" loading="lazy">
+                        <div class="project-content">
+                            <h3>Tienda Online de Moda</h3>
+                            <p>E-commerce completo con integración de pagos.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="assets/foto-3.jpg" alt="Proyecto 3" loading="lazy">
+                        <div class="project-content">
+                            <h3>Landing Page para Startup</h3>
+                            <p>Diseño minimalista y enfocado en conversiones.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Sección Servicios -->
+<section id="servicios" class="services">
+    <div class="container">
+        <h2>Servicios</h2>
+        <div class="service-list">
+            <div class="service">
+                <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                <h3>Diseño Web Personalizado</h3>
+                <p>Creación de sitios web únicos y adaptados a tus necesidades, con un enfoque en la experiencia del usuario y el diseño responsive.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3>E-commerce</h3>
+                <p>Desarrollo de tiendas online completas con carrito de compras, integración de pasarelas de pago y gestión de inventario.</p>
+            </div>
+            <div class="service">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Mantenimiento y Soporte</h3>
+                <p>Actualizaciones regulares, backups automatizados y soporte técnico continuo para garantizar el rendimiento óptimo de tu sitio web.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <!-- Sección Contacto -->
+<section id="contacto" class="contact">
+    <div class="container">
+        <h2>Contacto</h2>
+        <div class="contact-form">
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="Nombre" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Mensaje" required></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h3>Información de Contacto</h3>
+            <p>¿Tienes alguna pregunta o necesitas ayuda? No dudes en contactarnos.</p>
+            <p>Estamos disponibles para responder tus consultas y brindarte el mejor servicio.</p>
+            <a href="https://wa.me/5491234567890" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+       <!-- Footer -->
+<footer>
+    <div class="container">
+        <h3>Mi Sitio Web</h3>
+        <p>Transformamos tus ideas en realidad con diseños modernos y funcionales.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
