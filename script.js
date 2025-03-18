@@ -6,6 +6,7 @@ const overlay = document.getElementById('overlay');
 const toggleMenu = () => {
     navLinks.classList.toggle('active');
     overlay.classList.toggle('active');
+    menuToggle.classList.toggle('active'); // Agregado para animar el botón hamburguesa
 };
 
 menuToggle.addEventListener('click', toggleMenu);
@@ -29,6 +30,11 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
                 top: targetSection.offsetTop - offset,
                 behavior: 'smooth'
             });
+
+            // Cerrar el menú en móviles después de hacer clic
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
         }
     });
 });
