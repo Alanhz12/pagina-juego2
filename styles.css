@@ -6,20 +6,313 @@
     --color-text: #333333; /* Texto principal */
     --color-text-light: #666666; /* Texto secundario */
     --color-error: #ff4d4d; /* Color para errores */
-}  
+}
 
+/* Estilos para el HUD */
+#hud {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: none; /* Oculto por defecto */
+    gap: 20px;
+    font-family: 'Arial', sans-serif;
+    z-index: 10000;
+}
 
-/* Estilo de la nave con imagen */
+#hud div {
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--color-accent); /* Borde con color de acento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#hud div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#hud span {
+    color: var(--color-accent); /* Color de acento para los números */
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+/* Animación al mostrar el HUD */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#hud {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilos para la sección Hero */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/fondo-hero.jpg') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 70px; /* Espacio para el navbar */
+    box-sizing: border-box;
+}
+
+.hero .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-titles {
+    position: relative;
+    height: 150px; /* Altura fija para evitar saltos */
+    width: 200%;
+    overflow: hidden;
+}
+
+.hero-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    margin: 0;
+    opacity: 0;
+    animation: cambiarTitulo 6s infinite;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-title:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-title:nth-child(2) {
+    animation-delay: 3s;
+}
+
+@keyframes cambiarTitulo {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero .btn {
+    background: var(--color-accent);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1.5s ease-out;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+
+.hero .btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-5px);
+}
+
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos para la sección Juego */
+.game {
+    padding: 80px 0;
+    background: var(--color-secondary);
+    text-align: center;
+}
+
+.game h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--color-text);
+    position: relative;
+    display: inline-block;
+}
+
+.game h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.game-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+}
+
+.game-text {
+    flex: 1;
+}
+
+.game-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.game-text p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.game-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.game-text ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: var(--color-text-light);
+}
+
+.game-text ul li strong {
+    color: var(--color-accent);
+}
+
+.game-image {
+    flex: 1;
+}
+
+.game-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+}
+
+/* Estilos para el cartel de alerta */
+#alertOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+}
+
+#alertBox {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+#alertTitle {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#alertMessage {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#alertButton {
+    background: #00ccff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#alertButton:hover {
+    background: #0099cc;
+}
+
 /* Estilo de la nave */
 .nave {
-    position: absolute; /* Posicionamiento absoluto respecto al documento */
-    width: 50px; /* Ajusta el tamaño según tu imagen */
-    height: 50px; /* Ajusta el tamaño según tu imagen */
-    background-image: url('nave.png'); /* Ruta de tu imagen */
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background-image: url('assets/nave.png');
     background-size: cover;
-    transform: translate(-50%, -50%); /* Centrar la nave en su posición */
-    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: none; /* Ocultar inicialmente */
 }
+
 /* Estilo de los proyectiles */
 .proyectil {
     position: absolute;
@@ -27,6 +320,28 @@
     height: 10px;
     background-color: rgb(255, 0, 0);
     border-radius: 50%;
+}
+
+/* Efecto de ruptura (partículas mejoradas) */
+.ruptura {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff4d4d; /* Color de las partículas */
+    border-radius: 50%;
+    animation: explotar 1s ease-out forwards;
+    pointer-events: none; /* Evitar que las partículas interfieran con clics */
+}
+
+@keyframes explotar {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
 }
 
 /* Estilos generales */
@@ -46,25 +361,27 @@ body {
     margin: 0 auto;
 }
 
-/* Navbar Superior */
+/* Navbar Principal */
 #navbar {
-    background: rgba(255, 255, 255, 0);
-    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.815); /* Fondo blanco semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 70px;
-    display: flex;
-    align-items: center;
 }
 
 #navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #navbar .logo img {
@@ -73,108 +390,81 @@ body {
     filter: drop-shadow(0 0 5px var(--color-accent));
 }
 
+/* Menú de Navegación */
 #navbar .nav-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 #navbar .nav-links li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 #navbar .nav-links a {
-    color: var(--color-text);
-    text-decoration: none;
     font-size: 1rem;
     padding: 10px 15px;
+    color: var(--color-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: color 0.3s ease, background 0.3s ease;
     border-radius: 5px;
     position: relative;
+    overflow: hidden;
 }
 
-#navbar .nav-links a::after {
+#navbar .nav-links a::before {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
     background: var(--color-accent);
     transform: scaleX(0);
+    transform-origin: right;
     transition: transform 0.3s ease;
 }
 
-#navbar .nav-links a:hover::after {
+#navbar .nav-links a:hover::before {
     transform: scaleX(1);
+    transform-origin: left;
 }
 
 #navbar .nav-links a:hover {
     color: var(--color-accent);
+    background: rgba(0, 204, 255, 0.1); /* Fondo azul claro al hacer hover */
 }
 
-#navbar .nav-links i {
-    margin-right: 8px;
-    font-size: 18px;
-}
-
-/* Botón de menú hamburguesa */
+/* Botón de Menú Hamburguesa */
 #menu-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
     z-index: 1001;
     position: fixed;
     top: 20px;
     right: 20px;
 }
 
-.hamburger {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background: var(--color-accent);
-    position: relative;
-    transition: transform 0.3s ease, background 0.3s ease;
+#menu-toggle i {
+    font-size: 1.5rem;
+    color: var(--color-text);
+    transition: color 0.3s ease;
 }
 
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    width: 100%;
-    height: 3px;
-    background: var(--color-accent);
-    position: absolute;
-    left: 0;
-    transition: transform 0.3s ease, background 0.3s ease;
+#menu-toggle:hover i {
+    color: var(--color-accent);
 }
 
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}
-
-/* Animación del botón hamburguesa */
-#menu-toggle.active .hamburger {
-    background: transparent;
-}
-
-#menu-toggle.active .hamburger::before {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-#menu-toggle.active .hamburger::after {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Estilos del menú de navegación en móviles */
+/* Estilos para el menú móvil */
 @media (max-width: 768px) {
     #menu-toggle {
         display: block;
@@ -183,114 +473,66 @@ body {
     #navbar .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         top: 70px;
-        right: 0;
-        background: var(--color-primary);
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: rgba(255, 255, 255, 0.98); /* Fondo blanco semi-transparente */
+        backdrop-filter: blur(10px); /* Efecto de desenfoque */
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 1000;
     }
 
     #navbar .nav-links.active {
         display: flex;
+        right: 0;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    #navbar .nav-links:not(.active) {
+        animation: slideOut 0.3s ease-out;
     }
 
     #navbar .nav-links li {
-        margin: 15px 0;
+        margin: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Línea divisoria entre enlaces */
     }
 
     #navbar .nav-links a {
+        font-size: 1.1rem;
+        padding: 15px 20px;
+        color: var(--color-text);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    #navbar .nav-links a:hover {
+        background: rgba(0, 204, 255, 0.1); /* Fondo azul claro al hacer hover */
+        color: var(--color-accent);
+    }
+
+    /* Iconos de FontAwesome */
+    #navbar .nav-links a i {
         font-size: 1.2rem;
+        width: 20px;
+        text-align: center;
     }
 }
 
-/* Overlay para el fondo oscuro */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+/* Animaciones para el menú móvil */
+@keyframes slideIn {
+    from { right: -100%; }
+    to { right: 0; }
 }
 
-.overlay.active {
-    display: block;
-}
-
-/* Sección Inicio - Hero */
-.hero {
-    background: linear-gradient(rgba(0, 140, 255, 0.863), rgba(216, 215, 215, 0.9)), url('assets/hero-bg-light.jpg') no-repeat center center/cover;
-    color: var(--color-text);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    line-height: 1.2;
-    animation: fadeInDown 1s ease-out;
-    text-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
-}
-
-.hero p {
-    font-size: 1.4rem;
-    margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero .btn {
-    background: var(--color-accent);
-    color: var(--color-primary);
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: background 0.3s ease, transform 0.3s ease;
-    animation: fadeIn 1.5s ease-out;
-    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
-}
-
-.hero .btn:hover {
-    background: var(--color-accent-hover);
-    transform: translateY(-5px);
-}
-
-/* Animaciones */
-@keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-50px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(50px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Efecto de partículas */
-.particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+@keyframes slideOut {
+    from { right: 0; }
+    to { right: -100%; }
 }
 
 /* Sección Tecnologías */
@@ -298,6 +540,8 @@ body {
     padding: 80px 0;
     background: var(--color-secondary);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .technologies h2 {
@@ -329,35 +573,97 @@ body {
 .tech-card {
     background: var(--color-primary);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .tech-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 204, 255, 0.2);
 }
 
 .tech-icon {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--color-accent);
     margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-card:hover .tech-icon {
+    transform: scale(1.1);
+    color: var(--color-accent-hover);
 }
 
 .tech-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.tech-card:hover h3 {
+    color: var(--color-accent);
 }
 
 .tech-card p {
     font-size: 1rem;
     color: var(--color-text-light);
     line-height: 1.6;
+    transition: color 0.3s ease;
 }
 
+.tech-card:hover p {
+    color: var(--color-text);
+}
+
+/* Franja de logos */
+.tech-logos {
+    margin-top: 60px;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0); /* Fondo semi-transparente más claro */
+    overflow: hidden;
+    position: relative;
+}
+
+.logos-container {
+    display: flex;
+    animation: carrusel 40s linear infinite; /* Animación del carrusel */
+    align-items: center; /* Centrar verticalmente los logos */
+}
+
+.logos-container img {
+    height: 60px; /* Tamaño de los logos más grande */
+    margin: 0 30px; /* Espacio entre logos más amplio */
+    filter: brightness(1); /* Logos a color desde el principio */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logos-container img:hover {
+    transform: scale(1.1); /* Efecto de escala al hacer hover */
+    filter: brightness(1.2); /* Aumentar el brillo al hacer hover */
+}
+
+/* Animación del carrusel */
+@keyframes carrusel {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Mueve el contenedor a la izquierda */
+    }
+}
+
+/* Efecto de sombra y borde para los logos */
+.logos-container img {
+    border: 2px solid rgba(0, 204, 255, 0.1); /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 5px; /* Espacio interno */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+}
 /* Sección Futuro Digital */
 .future {
     padding: 80px 0;
@@ -430,12 +736,25 @@ body {
 
 .future-image {
     flex: 1;
+    position: relative;
+    perspective: 1000px; /* Agregar perspectiva para el efecto 3D */
 }
 
 .future-image img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
+    transform: rotate(5deg) translateY(0); /* Inclinación inicial */
+    animation: flotar 4s ease-in-out infinite; /* Efecto de flotación */
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: rotate(5deg) translateY(0);
+    }
+    50% {
+        transform: rotate(5deg) translateY(-20px); /* Movimiento hacia arriba */
+    }
 }
 
 /* Sección Servicios */
@@ -634,7 +953,7 @@ body {
 
 /* Estilos del Footer */
 footer {
-    background: var(--color-secondary);
+    background: var(--color-primary);
     color: var(--color-text);
     padding: 60px 0 20px;
     font-family: 'Arial', sans-serif;
@@ -766,13 +1085,32 @@ footer .container {
     .hero p {
         font-size: 1.2rem;
     }
-
-    .technologies h2, .future h2, .services h2, .contact h2 {
-        font-size: 2rem;
+    .tech-logos {
+        padding: 15px 0;
     }
 
-    .tech-grid, .service-list {
+    .logos-container img {
+        height: 50px; /* Tamaño más pequeño para móviles */
+        margin: 0 20px;
+    }
+    .tech-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+        padding: 20px;
+    }
+
+    .tech-icon {
+        font-size: 2.5rem;
+    }
+
+    .tech-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .tech-card p {
+        font-size: 0.9rem;
     }
 
     .contact .container {
@@ -784,14 +1122,27 @@ footer .container {
         width: 100%;
         margin-bottom: 20px;
     }
+    .game{
+        display: none;
+    }
 
     .future-content {
         flex-direction: column;
+        text-align: center;
     }
 
-    .future-text, .future-image {
-        width: 100%;
+    .future-text {
+        text-align: center;
     }
+
+    .future-image img {
+        max-width: 80%; /* Reducir el tamaño de la imagen en móviles */
+        margin-top: 20px;
+    }
+
+    footer {
+        background: var(--color-secondary);}
+
     .footer-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 30px;
@@ -812,26 +1163,41 @@ footer .container {
 
 /* Ajustes específicos para pantallas de 425px o menos */
 @media (max-width: 425px) {
-    .contact .container {
-        padding: 0 10px;
+    .contact {
+        padding: 20px 0; /* Reducir aún más el padding */
+    }
+
+    .contact h2 {
+        font-size: 1.8rem; /* Tamaño más pequeño para el título */
     }
 
     .contact-form, .contact-info {
-        padding: 20px;
+        padding: 15px; /* Padding más reducido */
     }
 
-    .contact-form input, .contact-form textarea {
-        width: 100%;
+    .contact-form textarea {
+        min-height: 100px; /* Altura mínima más reducida */
     }
 
-    .contact-form button {
-        width: 100%;
+    .contact-info h3 {
+        font-size: 1.3rem; /* Tamaño más pequeño para el subtítulo */
+    }
+
+    .contact-info p {
+        font-size: 0.8rem; /* Texto más pequeño */
     }
 
     .contact-info .whatsapp-link {
-        width: 100%;
-        padding: 10px;
-        text-align: center;
+        padding: 8px 15px; /* Padding más reducido para el botón */
+        font-size: 0.9rem; /* Texto más pequeño en el botón */
+    }
+    .logos-container img {
+        height: 40px; /* Tamaño aún más pequeño para móviles pequeños */
+        margin: 0 15px;
+    }
+
+    .game{
+        display: none;
     }
     .footer-content {
         grid-template-columns: 1fr;
@@ -855,6 +1221,47 @@ footer .container {
 /* Fondo para pantallas de 768px o menos */
 @media (max-width: 768px) {
     .hero {
-        background: url('assets/fondo-2.jpg') no-repeat center center/cover;
+        background: url('assets/fondo-hero.jpg') no-repeat center center/cover;
     }
 }
+
+/* Estilos para el botón "Activar Nave" */
+#nave-button-container {
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+    margin-right: 20px; /* Espacio entre el botón y el menú hamburguesa */
+}
+
+#nave-button-container button {
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#nave-button-container button:hover {
+    color: var(--color-accent);
+}
+
+#nave-button-container button::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#nave-button-container button:hover::after {
+    transform: scaleX(1);
+}
+

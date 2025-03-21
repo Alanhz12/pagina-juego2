@@ -12,9 +12,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    
-        <div id="nave" class="nave"></div>
-    
+    <div id="nave" class="nave"></div>
+    <!-- Contadores de tiempo y puntos -->
+    <div id="hud">
+        <div id="tiempoDisplay">Tiempo: <span id="tiempo">60</span>s</div>
+        <div id="objetivosDisplay">Objetivos: <span id="objetivos">5</span></div>
+    </div>
+
+    <!-- Cartel de alerta personalizado -->
+    <div id="alertOverlay">
+        <div id="alertBox">
+            <h2 id="alertTitle"></h2>
+            <p id="alertMessage"></p>
+            <button id="alertButton">Aceptar</button>
+        </div>
+    </div>
+
     <!-- Navbar Superior -->
     <nav id="navbar">
         <div class="container">
@@ -33,6 +46,7 @@
                     <li><a href="#futuro"><i class="fas fa-rocket"></i>Futuro Digital</a></li>
                     <li><a href="#servicios"><i class="fas fa-cogs"></i>Servicios</a></li>
                     <li><a href="#contacto"><i class="fas fa-envelope"></i>Contacto</a></li>
+                    <li><a href="#juego"><i class="fas fa-gamepad"></i>Juego</a></li>
                 </ul>
             </div>
         </div>
@@ -43,44 +57,65 @@
 
     <!-- Contenido principal -->
     <main>
-        <!-- Sección Inicio -->
-        <section id="inicio" class="hero">
-            <div class="particles" id="particles-js"></div>
-            <div class="container">
-                <h1>Diseño y Desarrollo de Sitios Web </h1>
-                <p>Transformamos tus ideas en realidad con diseños modernos, funcionales y centrados en el usuario.</p>
-                <a href="#contacto" class="btn">Contactar</a>
-            </div>
-        </section>
+     <!-- Sección Hero -->
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="hero-titles">
+            <h1 class="hero-title">Desarrollo de Sitios Web</h1>
+            <h1 class="hero-title">Transformamos tus Ideas en Realidad</h1>
+        </div>
+        <p>Transformamos tus ideas en realidad con diseños modernos, funcionales y centrados en el usuario.</p>
+        <a href="#contacto" class="btn">Contactar</a>
+    </div>
+</section>
 
-        <!-- Sección Tecnologías -->
-        <section id="tecnologias" class="technologies">
-            <div class="container">
-                <h2>Tecnologías que Usamos</h2>
-                <div class="tech-grid">
-                    <div class="tech-card">
-                        <div class="tech-icon"><i class="fas fa-code"></i></div>
-                        <h3>Desarrollo Web</h3>
-                        <p>Utilizamos las últimas tecnologías como HTML5, CSS3, JavaScript y frameworks modernos.</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Diseño Responsivo</h3>
-                        <p>Creamos diseños que se adaptan a cualquier dispositivo, desde móviles hasta escritorios.</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Cloud Computing</h3>
-                        <p>Implementamos soluciones en la nube para escalabilidad y seguridad.</p>
-                    </div>
-                    <div class="tech-card">
-                        <div class="tech-icon"><i class="fas fa-robot"></i></div>
-                        <h3>Inteligencia Artificial</h3>
-                        <p>Integramos IA para personalizar la experiencia del usuario.</p>
-                    </div>
-                </div>
+       <!-- Sección Tecnologías -->
+<section id="tecnologias" class="technologies">
+    <div class="container">
+        <h2>Tecnologías que Usamos</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-code"></i></div>
+                <h3>Desarrollo Web</h3>
+                <p>Utilizamos las últimas tecnologías como HTML5, CSS3, JavaScript y frameworks modernos.</p>
             </div>
-        </section>
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Diseño Responsivo</h3>
+                <p>Creamos diseños que se adaptan a cualquier dispositivo, desde móviles hasta escritorios.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud Computing</h3>
+                <p>Implementamos soluciones en la nube para escalabilidad y seguridad.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon"><i class="fas fa-robot"></i></div>
+                <h3>Inteligencia Artificial</h3>
+                <p>Integramos IA para personalizar la experiencia del usuario.</p>
+            </div>
+        </div>
+        <!-- Franja de logos -->
+        <div class="tech-logos">
+            <div class="logos-container">
+                <img src="assets/logo-html.png" alt="HTML5">
+                <img src="assets/logo-css.png" alt="CSS3">
+                <img src="assets/logo-js.png" alt="JavaScript">
+                <img src="assets/logo-react.png" alt="React">
+                <img src="assets/logo-node.png" alt="Node.js">
+                <img src="assets/logo-python.png" alt="Python">
+                <img src="assets/logo-git.png" alt="Git">
+                <img src="assets/logo-html.png" alt="HTML5">
+                <img src="assets/logo-css.png" alt="CSS3">
+                <img src="assets/logo-js.png" alt="JavaScript">
+                <img src="assets/logo-react.png" alt="React">
+                <img src="assets/logo-node.png" alt="Node.js">
+                <img src="assets/logo-python.png" alt="Python">
+                <img src="assets/logo-git.png" alt="Git">
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Sección Futuro Digital -->
         <section id="futuro" class="future">
@@ -89,11 +124,13 @@
                 <div class="future-content">
                     <div class="future-text">
                         <h3>Innovación y Transformación</h3>
-                        <p>El futuro digital está aquí. Nos especializamos en crear soluciones que anticipan las tendencias tecnológicas, desde realidad aumentada hasta blockchain.</p>
-                        <a href="#contacto" class="btn">Explorar Más</a>
+                        <p>En un mundo donde la tecnología avanza rápidamente, tener un sitio web es esencial para mantenerte relevante y competitivo. Un sitio web no solo te da visibilidad en línea, sino que también proyecta profesionalismo y credibilidad. Te permite llegar a un mercado global, adaptarte a los cambios en los hábitos de consumo y controlar tu imagen y mensaje. Además, es una herramienta clave para el marketing digital y te prepara para las tendencias futuras.
+
+                            No esperes más: un sitio web es tu puerta de entrada al futuro digital. ¡Empieza hoy! 🌐🚀</p>
+                        <a href="#contacto" class="btn">Contacto</a>
                     </div>
                     <div class="future-image">
-                        <img src="assets/foto-3.jpg" alt="Futuro Digital" loading="lazy">
+                        <img src="assets/futuro-tecnologico.jpg" alt="Futuro Digital" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -145,8 +182,34 @@
                 </div>
             </div>
         </section>
-    </main>
-
+   
+    <!-- Sección Juego -->
+    <section id="juego" class="game">
+        <div class="container">
+            <h2>Juego de Nave Espacial</h2>
+            <div class="game-content">
+                <div class="game-text">
+                    <h3>¡Bienvenido al Juego!</h3>
+                    <p>
+                        Controla una nave espacial y destruye todos los objetivos antes de que se acabe el tiempo.
+                        ¡Cuidado con los elementos de la página! Si los tocas, perderás.
+                    </p>
+                    <h3>Reglas del Juego:</h3>
+                    <ul>
+                        <li>Usa las teclas <strong>W</strong>, <strong>A</strong> y <strong>D</strong> para mover la nave.</li>
+                        <li>Presiona la <strong>barra espaciadora</strong> para disparar.</li>
+                        <li>Destruye todos los objetivos (<strong>🎯</strong>) antes de que se acabe el tiempo.</li>
+                        <li>Evita chocar con otros elementos de la página.</li>
+                    </ul>
+                    <div id="nave-button-container"></div> <!-- Botón de activar nave -->
+                </div>
+                <div class="game-image">
+                    <img src="assets/imagen-juego.png" alt="Juego de Nave Espacial" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+   </main>
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -159,19 +222,20 @@
                         Transformamos tus ideas en realidad con diseños modernos y funcionales.
                     </p>
                 </div>
-    
+
                 <!-- Columna 2: Enlaces rápidos -->
                 <div class="footer-column">
                     <h3 class="footer-title">Enlaces Rápidos</h3>
                     <ul class="footer-links">
                         <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#juego">Juego</a></li>
                         <li><a href="#tecnologias">Tecnologías</a></li>
                         <li><a href="#futuro">Futuro Digital</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-    
+
                 <!-- Columna 3: Redes sociales -->
                 <div class="footer-column">
                     <h3 class="footer-title">Síguenos</h3>
@@ -182,7 +246,7 @@
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-    
+
                 <!-- Columna 4: Información de contacto -->
                 <div class="footer-column">
                     <h3 class="footer-title">Contacto</h3>
@@ -193,19 +257,20 @@
                     </ul>
                 </div>
             </div>
-    
+
             <!-- Línea de separación -->
             <div class="footer-divider"></div>
-    
+
             <!-- Derechos de autor -->
             <div class="footer-bottom">
                 <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js" defer></script>
-    <script src="nave.js" defer></script> 
-    </body>
+    <script src="nave.js" defer></script>
+</body>
 </html>

@@ -1,20 +1,30 @@
 // Toggle del menú hamburguesa
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-const overlay = document.getElementById('overlay');
 
 const toggleMenu = () => {
     navLinks.classList.toggle('active');
-    overlay.classList.toggle('active');
-    menuToggle.classList.toggle('active'); // Agregado para animar el botón hamburguesa
+    menuToggle.classList.toggle('active');
 };
 
+// Abrir/cerrar el menú al hacer clic en el botón hamburguesa
 menuToggle.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
 
 // Cerrar el menú al hacer clic en un enlace
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', toggleMenu);
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) { // Si el menú está abierto
+            toggleMenu(); // Cerrar el menú
+        }
+    });
+});
+
+// Cerrar el menú al hacer clic fuera del menú
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navLinks.contains(event.target) || menuToggle.contains(event.target);
+    if (!isClickInsideMenu && navLinks.classList.contains('active')) {
+        toggleMenu(); // Cerrar el menú
+    }
 });
 
 // Desplazamiento suave
@@ -30,11 +40,6 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
                 top: targetSection.offsetTop - offset,
                 behavior: 'smooth'
             });
-
-            // Cerrar el menú en móviles después de hacer clic
-            if (window.innerWidth <= 768) {
-                toggleMenu();
-            }
         }
     });
 });
